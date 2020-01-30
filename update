@@ -1,0 +1,12 @@
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+
+d1={"_id":"4ede19a9-02e1-41c9-9064-e1233609ab88"}
+d2={"$set":{"address": "delhi"}}
+
+
+mycol.update_one(d1,d2)
